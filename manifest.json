@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "GCP Pub/Sub Message Memory",
+  "description": "Saves the last Pub/Sub message body per topic in Google Cloud Console and prefills it on publish.",
+  "version": "0.1.0",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://console.cloud.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://console.cloud.google.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
+
